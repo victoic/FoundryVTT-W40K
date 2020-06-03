@@ -1,0 +1,108 @@
+{
+"Actor": {
+  "types": ["detachment", "unit", "model"],
+  "templates": {
+    "detachment": {
+      "type": ["Patrol", "Battalion", "Brigade", "Supreme Command", "Super-Heavy", "Air Wing", "Super-Heavy Auxiliary", "Fortification Network", "Auxiliary Support", "Vanguard", "Spearhead", "Outrider"],
+      "hq_units": {
+        "min": 1,
+        "value": 1,
+        "max": 2
+      },
+      "troops_units": {
+        "min": 1,
+        "value": 1,
+        "max": 3
+      },
+      "dedicated_transport_units": {
+        "min": 0,
+        "value": 0,
+        "max": 13
+      },
+      "elites_units": {
+        "min": 0,
+        "value": 0,
+        "max": 2
+      },
+      "fast_attack_units": {
+        "min": 0,
+        "value": 0,
+        "max": 2
+      },
+      "flyers_units": {
+        "min": 0,
+        "value": 0,
+        "max": 2
+      },
+      "heavy_support_units": {
+        "min": 0,
+        "value": 0,
+        "max": 2
+      },
+      "lords_of_war_units": {
+        "min": 0,
+        "value": 0,
+        "max": 0
+      },
+    },
+    "unit_models": {
+      "types": ["hq", "troops", "dedicated_transport", "elites", "fast_attack", "flyers", "heavy_support", "lords_of_war"],
+      "models": ["Lord of Contagion"],
+      "quantities":[1]
+    },
+    "attributes": {
+      "name": "Lord of Contagion",
+      "m": 4,
+      "ws": 2,
+      "bs": 2,
+      "s": 4,
+      "t": 5,
+      "w": {
+        "min": 0,
+        "value": 6,
+        "max": 6
+      },
+      "a": 4,
+      "ld": 9,
+      "sv": 2,
+    },
+    "data": {
+      "role": "hq",
+      "power": 8,
+      "points": 95,
+      "faction_keywords": ["Chaos", "Nurgle", "Heretıc Astartes", "Death Guard"],
+      "keywords": ["Infantry", "Character", "Lord of Contagıon"],
+      "base": 40
+    },
+    "points": {
+      "total_points": 95
+    }
+  },
+  "detachment": {
+    "templates": ["detachment", "points"]
+  },
+  "unit": {
+    "templates": ["unit_models", "points"]
+  },
+  "model": {
+    "templates": ["attributes", "data", "points"]
+  }
+},
+"Item": {
+  "types": ["weapon", "wargear"],
+  },
+  "weapon": {
+    "name": "Manreaper",
+    "range": "Melee",
+    "type": "Melee",
+    "s": 3,
+    "ap": -3,
+    "d": "1d3",
+    "abilities": "You can re-roll wound rolls of 1 for a weapon with this ability."
+  },
+  "wargear": {
+    "name": "Adreanal Glands",
+    "abilities": "If a unit has adrenal glands, add 1\" to the distance it can move when it Advances or charges."
+  }
+}
+}
