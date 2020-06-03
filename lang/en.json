@@ -1,0 +1,13 @@
+{
+  "W40K.Title": "Warhammer 40K 8th Edition",
+  "W40K.Attributes": "Attributes",
+  "W40K.m": "Movement (M)",
+  "W40K.ws": "Weapon Skill (WS)",
+  "W40K.bs": "Ballistic Skill (BS)",
+  "W40K.s": "Strength (S)",
+  "W40K.t": "Toughness (T)",
+  "W40K.w": "Wounds (W)",
+  "W40K.a": "Attacks (A)",
+  "W40K.ld": "Leadership (Ld)",
+  "W40K.sv": "Save (Sv)",
+}

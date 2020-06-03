@@ -5,35 +5,10 @@
   "version": "0.0.1",
   "templateVersion": 2,
   "author": "Victor Lundgren",
-  "scripts": [
-    "scripts/system-script-1.js",
-    "scripts/system-script-2.js"
-  ],
-  "esmodules": [
-    "scripts/system-module-1.mjs"
-  ],
-  "styles": [
-    "styles/system-styles-1.css",
-    "styles/system-styles-2.css"
-  ],
-  "packs": [
-    {
-      "name": "weapons",
-      "label": "Weapons",
-      "system": "FoundryVTT-W40K",
-      "module": "FoundryVTT-W40K",
-      "path": "packs/weapons.db",
-      "entity": "Item"
-    },
-    {
-      "name": "models",
-      "label": "Models",
-      "system": "FoundryVTT-W40K",
-      "module": "FoundryVTT-W40K",
-      "path": "packs/models.db",
-      "entity": "Actor"
-    }
-  ],
+  "scripts": [],
+  "esmodules": [],
+  "styles": [],
+  "packs": [],
   "languages": [
     {
       "lang": "en",
