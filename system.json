@@ -28,6 +28,7 @@
       "path": "./lang/en.json"
     }
   ],
+  "initiative": "1d6",
   "socket": false,
   "gridDistance": 10,
   "gridUnits": "in",
