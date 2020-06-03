@@ -1,29 +1,34 @@
 {
   "name": "W40K",
-  "title": "Warhammer 40,000 8th Edition",
-  "description": "Warhammer 40,000 8th Edition game",
-  "version": "0.0.1",
+  "title": "Shadowrun 5th Edition",
+  "description": "Shadowrun 5th Edition game",
+  "version": "0.5.12",
   "templateVersion": "1.3",
-  "author": "Victor Lundgren",
+  "author": "Shawn Milligan [n3rf_herder#9026]",
   "esmodules": ["shadowrun5e.js"],
   "styles": ["css/main.css", "css/actor.css", "css/config.css", "css/item.css", "css/chat.css"],
-  "minimumCoreVersion": "0.5.3",
-  "compatibleCoreVersion": "0.5.3",
+  "minimumCoreVersion": "0.6.0",
+  "compatibleCoreVersion": "0.6.0",
   "languages": [
     {
       "lang": "en",
       "name": "English",
       "path": "lang/en.json"
     },
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    }
   ],
   "packs": [],
-  "initiative": "1d6",
-  "primaryTokenAttribute": "attributes.wound",
-  "secondaryTokenAttribute": null,
+  "initiative": "@initiative.current.base.value + @initiative.current.dice.text - @wounds.value",
+  "primaryTokenAttribute": "track.physical",
+  "secondaryTokenAttribute": "track.stun",
   "gridDistance": 1,
-  "gridUnits": "in",
-  "socket": false,
-  "manifest": "https://raw.githubusercontent.com/victoic/FoundryVTT-W40K/sanity/system.json",
-  "url": "https://github.com/victoic/FoundryVTT-W40K",
-  "download": "https://github.com/victoic/FoundryVTT-W40K/archive/sanity.zip"
+  "gridUnits": "m",
+  "socket": true,
+  "manifest": "https://raw.githubusercontent.com/smilligan93/SR5-FoundryVTT/master/system.json",
+  "url": "https://github.com/smilligan93/SR5-FoundryVTT",
+  "download": "https://github.com/smilligan93/SR5-FoundryVTT/archive/master.zip"
 }
