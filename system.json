@@ -5,7 +5,29 @@
   "version": "0.0.1",
   "templateVersion": 2,
   "author": "Victor Lundgren",
-
+  "scripts": [
+    "scripts/system.js",
+  ],
+  "styles": [
+    "styles/system.css",
+  ],
+  "packs": [
+    {
+      "name": "models",
+      "label": "Models",
+      "system": "FoundryVTT-W40K",
+      "module": "FoundryVTT-W40K",
+      "path": "packs/models.db",
+      "entity": "Actor"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
   "socket": false,
   "gridDistance": 10,
   "gridUnits": "in",
