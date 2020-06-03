@@ -1,42 +1,29 @@
 {
-  "name": "FoundryVTT-W40K",
-  "title": "Warhammer 40K 8th Edition",
-  "description": "Basic Warhammer 40K rules system for 8th edition.",
+  "name": "W40K",
+  "title": "Warhammer 40,000 8th Edition",
+  "description": "Warhammer 40,000 8th Edition game",
   "version": "0.0.1",
+  "templateVersion": "1.3",
   "author": "Victor Lundgren",
-  "scripts": [
-    "./scripts/w40k.js",
-  ],
-  "esmodules": [],
-  "styles": [
-    "./styles/w40k.css",
-  ],
-  "packs": [
-    {
-      "name": "models",
-      "label": "Models",
-      "system": "FoundryVTT-W40K",
-      "module": "FoundryVTT-W40K",
-      "path": "./packs/models.db",
-      "entity": "Actor"
-    }
-  ],
+  "esmodules": ["shadowrun5e.js"],
+  "styles": ["css/main.css", "css/actor.css", "css/config.css", "css/item.css", "css/chat.css"],
+  "minimumCoreVersion": "0.5.3",
+  "compatibleCoreVersion": "0.5.3",
   "languages": [
     {
       "lang": "en",
       "name": "English",
-      "path": "./lang/en.json"
-    }
+      "path": "lang/en.json"
+    },
   ],
+  "packs": [],
   "initiative": "1d6",
-  "socket": false,
-  "gridDistance": 10,
-  "gridUnits": "in",
-  "primaryTokenAttribute": "attributes.w",
+  "primaryTokenAttribute": "attributes.wound",
   "secondaryTokenAttribute": null,
-  "minimumCoreVersion": "0.5.3",
-  "compatibleCoreVersion": "0.5.3",
-  "url": "https://github.com/victoic/FoundryVTT-W40K",
+  "gridDistance": 1,
+  "gridUnits": "in",
+  "socket": false,
   "manifest": "https://raw.githubusercontent.com/victoic/FoundryVTT-W40K/sanity/system.json",
-  "download": "https://github.com/victoic/FoundryVTT-W40K/raw/sanity/FoundryVTT-W40K.zip"
+  "url": "https://github.com/victoic/FoundryVTT-W40K",
+  "download": "https://github.com/victoic/FoundryVTT-W40K/archive/sanity.zip"
 }
