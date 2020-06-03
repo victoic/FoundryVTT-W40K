@@ -5,9 +5,15 @@
   "version": "0.0.1",
   "templateVersion": 2,
   "author": "Victor Lundgren",
-  "scripts": [],
-  "esmodules": [],
-  "styles": [],
+  "scripts": [
+    "scripts/system.js",
+  ],
+  "esmodules": [
+    "scripts/system.mjs"
+  ],
+  "styles": [
+    "styles/system.css",
+  ],
   "packs": [],
   "languages": [
     {
