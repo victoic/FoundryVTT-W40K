@@ -25,5 +25,5 @@
   "primaryTokenAttribute": "attributes.w",
   "url": "https://github.com/victoic/FoundryVTT-W40K",
   "manifest": "https://raw.githubusercontent.com/victoic/FoundryVTT-W40K/dev/system.json",
-  "download": "https://raw.githubusercontent.com/victoic/FoundryVTT-W40K/dev/raw/archive.zip"
+  "download": "https://github.com/victoic/FoundryVTT-W40K/raw/dev/FoundryVTT-W40K.zip"
 }
