@@ -37,6 +37,6 @@
   "minimumCoreVersion": "0.5.3",
   "compatibleCoreVersion": "0.5.3",
   "url": "https://github.com/victoic/FoundryVTT-W40K",
-  "manifest": "https://raw.githubusercontent.com/victoic/FoundryVTT-W40K/dev/system.json",
-  "download": "https://github.com/victoic/FoundryVTT-W40K/raw/dev/FoundryVTT-W40K.zip"
+  "manifest": "https://raw.githubusercontent.com/victoic/FoundryVTT-W40K/sanity/system.json",
+  "download": "https://github.com/victoic/FoundryVTT-W40K/raw/sanity/FoundryVTT-W40K.zip"
 }
