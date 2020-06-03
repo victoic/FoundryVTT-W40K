@@ -24,6 +24,6 @@
   "gridUnits": "in",
   "primaryTokenAttribute": "attributes.w",
   "url": "https://github.com/victoic/FoundryVTT-W40K",
-  "manifest": "https://raw.githubusercontent.com/victoic/FoundryVTT-W40K/master/system.json",
-  "download": "https://raw.githubusercontent.com/victoic/FoundryVTT-W40K/master/archive.zip"
+  "manifest": "https://raw.githubusercontent.com/victoic/FoundryVTT-W40K/dev/system.json",
+  "download": "https://raw.githubusercontent.com/victoic/FoundryVTT-W40K/dev/raw/archive.zip"
 }
