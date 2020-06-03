@@ -1,0 +1,29 @@
+{
+  "name": "FoundryVTT-W40K",
+  "title": "Warhammer 40K 8th Edition",
+  "description": "Basic Warhammer 40K rules system for 8th edition.",
+  "version": "0.0.1",
+  "templateVersion": 2,
+  "author": "Victor Lundgren",
+  "scripts": [
+    "scripts/system.js",
+  ],
+  "styles": [
+    "styles/system.css",
+  ],
+  
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "socket": false,
+  "gridDistance": 10,
+  "gridUnits": "in",
+  "primaryTokenAttribute": "attributes.w",
+  "url": "https://github.com/victoic/FoundryVTT-W40K",
+  "manifest": "https://raw.githubusercontent.com/victoic/FoundryVTT-W40K/dev/system.json",
+  "download": "https://github.com/victoic/FoundryVTT-W40K/raw/dev/FoundryVTT-W40K.zip"
+}
