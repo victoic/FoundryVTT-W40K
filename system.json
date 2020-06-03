@@ -2,7 +2,7 @@
   "name": "w40k",
   "title": "Warhammer 40,000 8th Edition",
   "description": "Play Warhammer 40,000 8th Edition",
-  "version": "0.0.2",
+  "version": "0.0.2.1",
   "author": "Victor Lundgren",
   "minimumCoreVersion": "0.5.2",
   "compatibleCoreVersion": "0.6.1",
@@ -23,7 +23,7 @@
     }
   ],
   "languages": ["en"],
-  "url": "https://github.com/victoic/FoundryVTT-W40K",
+  "url": "https://github.com/victoic/FoundryVTT-W40K/tree/sanity",
   "manifest": "https://raw.githubusercontent.com/victoic/FoundryVTT-W40K/sanity/system.json",
   "download": "https://github.com/victoic/FoundryVTT-W40K/archive/sanity.zip",
   "initiative": "1d6",
