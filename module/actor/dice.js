@@ -113,7 +113,7 @@ export class DiceArchmage {
 
     // Render modal dialog
     template = template ||
-      'systems/archmage/templates/chat/roll-dialog.html';
+      'systems/w40k/templates/chat/roll-dialog.html';
     let dialogData = {
       formula: parts.join(' + '),
       data: data,
@@ -269,7 +269,7 @@ export class DiceArchmage {
 
     // Construct dialog data
     template = template ||
-      'systems/archmage/templates/chat/roll-dialog.html';
+      'systems/w40k/templates/chat/roll-dialog.html';
     let dialogData = {
       formula: parts.join(' + '),
       data: data,

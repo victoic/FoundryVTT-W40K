@@ -212,7 +212,7 @@ export class ArchmageReference extends Application {
     const options = super.defaultOptions;
     options.title = "13th Age Inline Rolls Reference"
     options.id = "archmage-help";
-    options.template = "systems/archmage/templates/sidebar/apps/archmage-help.html";
+    options.template = "systems/w40k/templates/sidebar/apps/archmage-help.html";
     options.width = 820;
     return options;
   }

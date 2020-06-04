@@ -1,107 +1,829 @@
 {
-"Actor": {
-  "types": ["detachment", "unit", "model"],
-  "templates": {
+  "Actor": {
+    "types": ["character", "npc", "detachment"],
+    "templates": {
+      "points": {
+        "details": {
+          "total_points": 0,
+          "total_power_level": 0
+        },
+      "keywords": {
+        "keywords": {
+        "faction_main":"",
+        "faction_optional":{
+          "name":"",
+          "value":""
+        },
+        "unit_keyword":"",
+        "name_keyword":"",
+        "other_keywords":[]
+        }
+      }
+      },
+      "standard": {
+        "abilities": {
+          "str": {
+            "type": "Number",
+            "label": "Strength",
+            "value": 10,
+            "min": 3,
+            "mod": 0
+          },
+          "dex": {
+            "type": "Number",
+            "label": "Dexterity",
+            "value": 10,
+            "min": 3,
+            "mod": 0
+          },
+          "con": {
+            "type": "Number",
+            "label": "Constitution",
+            "value": 10,
+            "min": 3,
+            "mod": 0
+          },
+          "int": {
+            "type": "Number",
+            "label": "Intelligence",
+            "value": 10,
+            "min": 3,
+            "mod": 0
+          },
+          "wis": {
+            "type": "Number",
+            "label": "Wisdom",
+            "value": 10,
+            "min": 3,
+            "mod": 0
+          },
+          "cha": {
+            "type": "Number",
+            "label": "Charisma",
+            "value": 10,
+            "min": 3,
+            "mod": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "type": "Number",
+            "label": "Armor Class",
+            "value": 10,
+            "base": 10,
+            "min": 0
+          },
+          "pd": {
+            "type": "Number",
+            "label": "Physical Defense",
+            "value": 10,
+            "base": 10,
+            "min": 0
+          },
+          "md": {
+            "type": "Number",
+            "label": "Mental Defense",
+            "value": 10,
+            "base": 10,
+            "min": 0
+          },
+          "hp": {
+            "type": "Number",
+            "label": "Hit Points",
+            "value": 10,
+            "min": 0,
+            "max": 10,
+            "temp": 0,
+            "tempmax": 0
+          },
+          "recoveries": {
+            "type": "Number",
+            "label": "Recoveries",
+            "value": 8,
+            "max": 8,
+            "dice": "d8"
+          },
+          "init": {
+            "type": "Number",
+            "label": "Initiative Modifier",
+            "value": 0
+          },
+          "level": {
+            "type": "Number",
+            "label": "Level",
+            "value": 1,
+            "min": 0,
+            "max": 10
+          }
+        },
+        "details": {
+          "alignment": {
+            "type": "String",
+            "label": "Alignment"
+          },
+          "biography": {
+            "type": "String",
+            "label": "Biography"
+          },
+          "class": {
+            "type": "String",
+            "label": "Class"
+          },
+          "race": {
+            "type": "String",
+            "label": "Race"
+          }
+        },
+        "backgrounds": {
+          "bg1": {
+            "name": {
+              "type": "String",
+              "value": ""
+            },
+            "bonus": {
+              "type": "Number",
+              "value": 0
+            },
+            "isActive": {
+              "type": "Boolean",
+              "value": 1
+            }
+          },
+          "bg2": {
+            "name": {
+              "type": "String",
+              "value": ""
+            },
+            "bonus": {
+              "type": "Number",
+              "value": 0
+            },
+            "isActive": {
+              "type": "Boolean",
+              "value": 1
+            }
+          },
+          "bg3": {
+            "name": {
+              "type": "String",
+              "value": ""
+            },
+            "bonus": {
+              "type": "Number",
+              "value": 0
+            },
+            "isActive": {
+              "type": "Boolean",
+              "value": 1
+            }
+          },
+          "bg4": {
+            "name": {
+              "type": "String",
+              "value": ""
+            },
+            "bonus": {
+              "type": "Number",
+              "value": 0
+            },
+            "isActive": {
+              "type": "Boolean",
+              "value": 0
+            }
+          },
+          "bg5": {
+            "name": {
+              "type": "String",
+              "value": ""
+            },
+            "bonus": {
+              "type": "Number",
+              "value": 0
+            },
+            "isActive": {
+              "type": "Boolean",
+              "value": 0
+            }
+          },
+          "bg6": {
+            "name": {
+              "type": "String",
+              "value": ""
+            },
+            "bonus": {
+              "type": "Number",
+              "value": 0
+            },
+            "isActive": {
+              "type": "Boolean",
+              "value": 0
+            }
+          },
+          "bg7": {
+            "name": {
+              "type": "String",
+              "value": ""
+            },
+            "bonus": {
+              "type": "Number",
+              "value": 0
+            },
+            "isActive": {
+              "type": "Boolean",
+              "value": 0
+            }
+          },
+          "bg8": {
+            "name": {
+              "type": "String",
+              "value": ""
+            },
+            "bonus": {
+              "type": "Number",
+              "value": 0
+            },
+            "isActive": {
+              "type": "Boolean",
+              "value": 0
+            }
+          }
+        },
+        "icons": {
+          "i1": {
+            "name": {
+              "type": "String",
+              "value": ""
+            },
+            "relationship": {
+              "type": "String",
+              "value": ""
+            },
+            "bonus": {
+              "type": "Number",
+              "value": 0
+            },
+            "isActive": {
+              "type": "Boolean",
+              "value": 1
+            }
+          },
+          "i2": {
+            "name": {
+              "type": "String",
+              "value": ""
+            },
+            "relationship": {
+              "type": "String",
+              "value": ""
+            },
+            "bonus": {
+              "type": "Number",
+              "value": 0
+            },
+            "isActive": {
+              "type": "Boolean",
+              "value": 1
+            }
+          },
+          "i3": {
+            "name": {
+              "type": "String",
+              "value": ""
+            },
+            "relationship": {
+              "type": "String",
+              "value": ""
+            },
+            "bonus": {
+              "type": "Number",
+              "value": 0
+            },
+            "isActive": {
+              "type": "Boolean",
+              "value": 1
+            }
+          },
+          "i4": {
+            "name": {
+              "type": "String",
+              "value": ""
+            },
+            "relationship": {
+              "type": "String",
+              "value": ""
+            },
+            "bonus": {
+              "type": "Number",
+              "value": 0
+            },
+            "isActive": {
+              "type": "Boolean",
+              "value": 0
+            }
+          },
+          "i5": {
+            "name": {
+              "type": "String",
+              "value": ""
+            },
+            "relationship": {
+              "type": "String",
+              "value": ""
+            },
+            "bonus": {
+              "type": "Number",
+              "value": 0
+            },
+            "isActive": {
+              "type": "Boolean",
+              "value": 0
+            }
+          }
+        }
+      }
+    },
     "detachment": {
-      "type": ["Patrol", "Battalion", "Brigade", "Supreme Command", "Super-Heavy", "Air Wing", "Super-Heavy Auxiliary", "Fortification Network", "Auxiliary Support", "Vanguard", "Spearhead", "Outrider"],
-      "hq_units": {
-        "min": 1,
-        "value": 1,
-        "max": 2
+      "templates": ["points"],
+      "details": {
+        "detachment_type": {
+            "type": "String",
+            "label": "Detachment Type",
+            "value": ""
+          },
+        "detachment_faction": {
+            "type": "String",
+            "label": "Detachment Faction",
+            "value": ""
+          },
+          "number_units":{
+            "value": 0,
+            "max": 0
+          },
+          "units_ids": []
       },
-      "troops_units": {
-        "min": 1,
-        "value": 1,
-        "max": 3
-      },
-      "dedicated_transport_units": {
-        "min": 0,
-        "value": 0,
-        "max": 13
-      },
-      "elites_units": {
-        "min": 0,
-        "value": 0,
-        "max": 2
-      },
-      "fast_attack_units": {
-        "min": 0,
-        "value": 0,
-        "max": 2
-      },
-      "flyers_units": {
-        "min": 0,
-        "value": 0,
-        "max": 2
-      },
-      "heavy_support_units": {
-        "min": 0,
-        "value": 0,
-        "max": 2
-      },
-      "lords_of_war_units": {
-        "min": 0,
-        "value": 0,
-        "max": 0
-      },
+      "units": {
+        "hq_units": {
+          "label": "hq_units",
+          "name": "HQ",
+          "icon": "fa-skull fa-inverse",
+          "size": {
+            "min": 0,
+            "value": 0,
+            "max": 0
+          }
+        },
+        "troops_units": {
+          "label": "troops_units",
+          "name": "Troops",
+          "icon": "fa-chevron-right fa-inverse",
+          "size": {
+            "min": 0,
+            "value": 0,
+            "max": 0
+          }
+        },
+        "dedicated_transport_units": {
+          "label": "dedicated_transport_units",
+          "name": "Dedicated Transport",
+          "icon": "fa-arrow-up fa-inverse",
+          "size": {
+            "min": 0,
+            "value": 0,
+            "max": 0
+          }
+        },
+        "elites_units": {
+          "label": "elites_units",
+          "name": "Elites",
+          "icon": "fa-plus fa-inverse",
+          "size": {
+            "min": 0,
+            "value": 0,
+            "max": 0
+          }
+        },
+        "fast_attack_units": {
+          "label": "fast_attack_units",
+          "name": "Fast Attack",
+          "icon": "fa-bolt fa-inverse",
+          "size": {
+            "min": 0,
+            "value": 0,
+            "max": 0
+          }
+        },
+        "fortification_units": {
+          "label": "fortification_units",
+          "name": "Fortification",
+          "icon": "fa-chess-rook fa-inverse",
+          "size": {
+            "min": 0,
+            "value": 0,
+            "max": 0
+          }
+        },
+        "flyers_units": {
+          "label": "flyers_units",
+          "name": "Flyers",
+          "icon": "fa-feather-alt fa-inverse",
+          "size": {
+            "min": 0,
+            "value": 0,
+            "max": 0
+          }
+        },
+        "heavy_support_units": {
+          "label": "heavy_support_units",
+          "name": "Heavy Support",
+          "icon": "fa-fire fa-inverse",
+          "size": {
+            "min": 0,
+            "value": 0,
+            "max": 0
+          }
+        },
+        "lord_of_war_units": {
+          "label": "lord_of_war_units",
+          "name": "Lord of War",
+          "icon": "fa-fist-raised fa-inverse",
+          "size": {
+            "min": 0,
+            "value": 0,
+            "max": 0
+          }
+        }
+      }
     },
-    "unit_models": {
-      "types": ["hq", "troops", "dedicated_transport", "elites", "fast_attack", "flyers", "heavy_support", "lords_of_war"],
-      "models": ["Lord of Contagion"],
-      "quantities":[1]
-    },
-    "attributes": {
-      "name": "Lord of Contagion",
-      "m": 4,
-      "ws": 2,
-      "bs": 2,
-      "s": 4,
-      "t": 5,
-      "w": {
-        "min": 0,
-        "value": 6,
-        "max": 6
+    "model": {
+      "templates": ["points", "keywords"],
+      "profile": {
+        "m": {
+          "type": "String",
+          "label": "Movement (M)",
+          "value": "0"
+        },
+        "ws": {
+          "type": "String",
+          "label": "Weapon Skill (WS)",
+          "value": "0"
+        },
+        "bs": {
+          "type": "String",
+          "label": "Ballistic Skill (BS)",
+          "value": "0"
+        },
+        "s": {
+          "type": "String",
+          "label": "Strength (S)",
+          "value": "0"
+        },
+        "t": {
+          "type": "String",
+          "label": "Toughness (T)",
+          "value": "0"
+        },
+        "w": {
+          "type": "Number",
+          "label": "Wounds (W)",
+          "min": 0,
+          "value": 0,          
+          "max": 0
+        },
+        "a": {
+          "type": "String",
+          "label": "Attacks",
+          "value": "0"
+        },
+        "ld": {
+          "type": "String",
+          "label": "Leadership (Ld)",
+          "value": "0"
+        },
+        "sv": {
+          "type": "String",
+          "label": "Save (Sv)",
+          "value": "0"
+        },
       },
-      "a": 4,
-      "ld": 9,
-      "sv": 2,
+      "details": {
+        ""
+      }
     },
-    "data": {
-      "role": "hq",
-      "power": 8,
-      "points": 95,
-      "faction_keywords": ["Chaos", "Nurgle", "Heretıc Astartes", "Death Guard"],
-      "keywords": ["Infantry", "Character", "Lord of Contagıon"],
-      "base": 40
+    "character": {
+      "templates": ["standard"],
+      "attributes": {
+        "weapon": {
+          "melee": {
+            "type": "String",
+            "label": "Melee weapon dice",
+            "dice": "d8",
+            "value": "d8"
+          },
+          "ranged": {
+            "type": "String",
+            "label": "Ranged weapon dice",
+            "dice": "d8",
+            "value": "d8"
+          }
+        }
+      }
     },
-    "points": {
-      "total_points": 95
+    "npc": {
+      "templates": ["standard"],
+      "details": {
+        "role": {
+          "type": "String",
+          "label": "Role"
+        },
+        "size": {
+          "type": "String",
+          "label": "Size"
+        },
+        "type": {
+          "type": "String",
+          "label": "Type"
+        },
+        "resistance": {
+          "type": "String",
+          "label": "Resistance"
+        },
+        "vulnerability": {
+          "type": "String",
+          "label": "Vulnerability"
+        }
+      }
     }
   },
-  "detachment": {
-    "templates": ["detachment", "points"]
-  },
-  "unit": {
-    "templates": ["unit_models", "points"]
-  },
-  "model": {
-    "templates": ["attributes", "data", "points"]
+  "Item": {
+    "types": ["power", "trait", "action", "nastierSpecial", "tool", "loot", "equipment"],
+    "templates": {
+      "standard": {
+        "name": {
+          "type": "String",
+          "label": "Name"
+        },
+        "description": {
+          "type": "String",
+          "label": "Description"
+        }
+      }
+    },
+    "power": {
+      "templates": ["standard"],
+      "powerSource": {
+        "type": "String",
+        "label": "Power Source",
+        "value": ""
+      },
+      "powerType": {
+        "type": "String",
+        "label": "Power Type",
+        "value": ""
+      },
+      "powerUsage": {
+        "type": "String",
+        "label": "Power Usage",
+        "value": ""
+      },
+      "powerLevel": {
+        "type": "Number",
+        "label": "Level",
+        "value": ""
+      },
+      "actionType": {
+        "type": "String",
+        "label": "Action",
+        "value": ""
+      },
+      "range": {
+        "type": "String",
+        "label": "Range",
+        "value": ""
+      },
+      "trigger": {
+        "type": "String",
+        "label": "Trigger",
+        "value": ""
+      },
+      "target": {
+        "type": "String",
+        "label": "Target",
+        "value": ""
+      },
+      "always": {
+        "type": "String",
+        "label": "Always",
+        "value": ""
+      },
+      "attack": {
+        "type": "String",
+        "label": "Attack",
+        "value": ""
+      },
+      "hit": {
+        "type": "String",
+        "label": "Hit",
+        "value": ""
+      },
+      "hitEven": {
+        "type": "String",
+        "label": "Natural Even Hit",
+        "value": ""
+      },
+      "hitOdd": {
+        "type": "String",
+        "label": "Natural Odd Hit",
+        "value": ""
+      },
+      "crit": {
+        "type": "String",
+        "label": "Crit",
+        "value": ""
+      },
+      "miss": {
+        "type": "String",
+        "label": "Miss",
+        "value": ""
+      },
+      "missEven": {
+        "type": "String",
+        "label": "Even Miss",
+        "value": ""
+      },
+      "missOdd": {
+        "type": "String",
+        "label": "Odd Miss",
+        "value": ""
+      },
+      "cost": {
+        "type": "String",
+        "label": "Cost",
+        "value": ""
+      },
+      "castBroadEffect": {
+        "type": "String",
+        "label": "Cast for Broad Effect",
+        "value": ""
+      },
+      "castPower": {
+        "type": "String",
+        "label": "Cast for Power",
+        "value": ""
+      },
+      "sustainedEffect": {
+        "type": "String",
+        "label": "Opening and Sustained Effect",
+        "value": ""
+      },
+      "finalVerse": {
+        "type": "String",
+        "label": "Final Verse",
+        "value": ""
+      },
+      "special": {
+        "type": "String",
+        "label": "Special",
+        "value": ""
+      },
+      "effect": {
+        "type": "String",
+        "label": "Effect",
+        "value": ""
+      },
+      "spellLevel3": {
+        "type": "String",
+        "label": "3rd Level Spell",
+        "value": ""
+      },
+      "spellLevel5": {
+        "type": "String",
+        "label": "5th Level Spell",
+        "value": ""
+      },
+      "spellLevel7": {
+        "type": "String",
+        "label": "7th Level Spell",
+        "value": ""
+      },
+      "spellLevel9": {
+        "type": "String",
+        "label": "9th Level Spell",
+        "value": ""
+      },
+      "spellChain": {
+        "type": "String",
+        "label": "Chain Spell",
+        "value": ""
+      },
+      "breathWeapon": {
+        "type": "String",
+        "label": "Breath Weapon",
+        "value": ""
+      },
+      "recharge": {
+        "type": "Number",
+        "label": "Recharge",
+        "value": 0
+      },
+      "quantity": {
+        "type": "Number",
+        "label": "Uses",
+        "value": 1
+      },
+      "feats": {
+        "adventurer": {
+          "description": {
+            "type": "String",
+            "label": "Adventurer Feat"
+          },
+          "isActive": {
+            "type": "Boolean",
+            "label": "Active"
+          }
+        },
+        "champion": {
+          "description": {
+            "type": "String",
+            "label": "Champion Feat"
+          },
+          "isActive": {
+            "type": "Boolean",
+            "label": "Active"
+          }
+        },
+        "epic": {
+          "description": {
+            "type": "String",
+            "label": "Epic Feat"
+          },
+          "isActive": {
+            "type": "Boolean",
+            "label": "Active"
+          }
+        }
+      }
+    },
+    "trait": {
+      "templates": ["standard"]
+    },
+    "action": {
+      "templates": ["standard"],
+      "attack": {
+        "type": "String",
+        "label": "Attack Roll"
+      },
+      "hit": {
+        "type": "String",
+        "label": "Hit"
+      },
+      "hit1": {
+        "type": "String",
+        "label": "Hit"
+      },
+      "hit2": {
+        "type": "String",
+        "label": "Hit"
+      },
+      "hit3": {
+        "type": "String",
+        "label": "Hit"
+      },
+      "hit4": {
+        "type": "String",
+        "label": "Hit"
+      },
+      "hit5": {
+        "type": "String",
+        "label": "Hit"
+      },
+      "miss": {
+        "type": "String",
+        "label": "Miss"
+      }
+    },
+    "nastierSpecial": {
+      "templates": ["standard"]
+    },
+    "tool": {
+      "templates": ["standard"]
+    },
+    "loot": {
+      "templates": ["standard"]
+    },
+    "equipment": {
+      "templates": ["standard"],
+      "properties": {},
+      "attributes": {
+        "attack": {
+          "melee": {"bonus": 0},
+          "ranged": {"bonus": 0},
+          "divine": {"bonus": 0},
+          "arcane": {"bonus": 0}
+        },
+        "ac": {"bonus": 0},
+        "md": {"bonus": 0},
+        "pd": {"bonus": 0}
+      }
+    }
   }
-},
-"Item": {
-  "types": ["weapon", "wargear"],
-  "weapon": {
-    "name": "Manreaper",
-    "range": "Melee",
-    "type": "Melee",
-    "s": 3,
-    "ap": -3,
-    "d": "1d3",
-    "abilities": "You can re-roll wound rolls of 1 for a weapon with this ability."
-  },
-  "wargear": {
-    "name": "Adreanal Glands",
-    "abilities": "If a unit has adrenal glands, add 1\" to the distance it can move when it Advances or charges."
-  }
-}
 }

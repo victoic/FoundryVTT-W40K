@@ -3,7 +3,7 @@ export class ActorSheetFlags extends BaseEntitySheet {
     const options = super.defaultOptions;
     return mergeObject(options, {
       id: "actor-flags",
-      template: "systems/archmage/templates/actors/actor-flags.html",
+      template: "systems/w40k/templates/actors/actor-flags.html",
       width: 500,
       closeOnSubmit: true
     });

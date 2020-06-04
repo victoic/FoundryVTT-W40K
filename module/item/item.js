@@ -23,7 +23,7 @@ export class ItemArchmage extends Item {
   async roll() {
 
     // Basic template rendering data
-    const template = `systems/archmage/templates/chat/${this.data.type.toLowerCase()}-card.html`
+    const template = `systems/w40k/templates/chat/${this.data.type.toLowerCase()}-card.html`
     const token = this.actor.token;
     const templateData = {
       actor: this.actor,

@@ -2,6 +2,7 @@ import { ARCHMAGE } from './setup/config.js';
 import { ActorArchmage } from './actor/actor.js';
 import { ActorArchmageSheet } from './actor/actor-sheet.js';
 import { ActorArchmageNPCSheet } from './actor/actor-npc-sheet.js';
+import { ActorDetachmentSheet } from './actor/actor-detachment-sheet.js';
 import { ItemArchmage } from './item/item.js';
 import { ItemArchmageSheet } from './item/item-sheet.js';
 import { CinderWeatherEffect } from './setup/weather.js';
@@ -23,6 +24,7 @@ Hooks.once('init', async function() {
     ActorArchmage,
     ActorArchmageSheet,
     ActorArchmageNPCSheet,
+    ActorDetachmentSheet,
     DiceArchmage,
     ItemArchmage,
     ItemArchmageSheet
@@ -46,6 +48,10 @@ Hooks.once('init', async function() {
   Actors.registerSheet('archmage', ActorArchmageSheet, {
     types: ["character"],
     makeDefault: true
+  });
+  Actors.registerSheet('archmage', ActorDetachmentSheet, {
+    types: ["detachment"],
+    makeDefault: false
   });
 
   Actors.registerSheet("archmage", ActorArchmageNPCSheet, {

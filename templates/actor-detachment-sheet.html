@@ -1,0 +1,160 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    <!-- HEADER -->
+    <header class="sheet-header">
+        <h1 class="charname">
+            <input name="name" type="text" value="{{actor.name}}" placeholder="Detachment Name" />
+        </h1>
+    </header>
+
+    <section class="sheet-body">
+      <ul id="units" class="units">
+        {{#each data.units as |unit id|}}
+        <li id="{{unit.label}}" name="{{unit.name}}">
+          <span id="unit-name-{{unit.label}}" class="unit-name">{{unit.name}}</span>
+          <span id="unit-icon-{{unit.label}}" class="fa-stack fa-2x unit-icon">
+            <i class="fas fa-square fa-stack-2x"></i>
+            <i class="fas {{unit.icon}} fa-stack-1x"></i>
+          </span>
+          <span id="unit-size-{{unit.label}}" class="unit-size">
+            <input readonly="" name="units.{{unit.label}}.size.min" class="unit-size-value updatable" type="text" value="{{unit.size.min}}" data-dtype="Number"/>
+            /
+            <input readonly="" name="units.{{unit.label}}.size.value" class="unit-size-value updatable" type="text" value="{{unit.size.value}}" data-dtype="Number"/>
+            /
+            <input readonly="" name="units.{{unit.label}}.size.max" class="unit-size-value updatable" type="text" value="{{unit.size.max}}" data-dtype="Number"/>
+          </span>
+        </li>
+        {{/each}}
+      </ul>
+
+      <ul id="units-list-wrapper" class="units-list-wrapper">
+        <li id="unit-list-add" class="btn-wrapper">
+          <button id="unit-list-add-button" class="btn"><i class="fas fa-plus"></i>Add unit</button>
+        <li id="units-list" class="list-wrapper">
+          <h4>UNITS IN THIS DETACHMENT:</h4>
+          {{#each data.details.units_ids as |unit id|}}
+          <span>{{units}}</span>
+          {{/each}}
+        </li>
+      </ul>
+
+    </section>
+
+    <section class="sheet-sidebar">
+        <!-- DETACHMENT TYPE -->
+        <ol class="sidebar-item">
+            <li class="detachment-detail detachment-detail--detachment_type">
+              <label for="data.details.detachment_type">
+                <h4 class="points-label">Detachment Type</h4>
+              </label>
+              <select id="data.details.detachment_type" class="updatable" name="data.details.detachment_type.value" data-dtype="data.details.detachment_type.type">
+                  {{#select data.details.detachment_type.value}}
+                  <option value=""></option>
+                  <option value="Air Wing">Air Wing</option>
+                  <option value="Auxiliary Support">Auxiliary Support</option>
+                  <option value="Battalion">Battalion</option>
+                  <option value="Brigade">Brigade</option>
+                  <option value="Fortification Network">Fortification Network</option>
+                  <option value="Outrider">Outrider</option>
+                  <option value="Patrol">Patrol</option>
+                  <option value="Spearhead">Spearhead</option>
+                  <option value="Super-Heavy">Super-Heavy</option>
+                  <option value="Super-Heavy Auxiliary">Super-Heavy Auxiliary</option>
+                  <option value="Supreme Command">Supreme Command</option>
+                  <option value="Vanguard">Vanguard</option>
+                  {{/select}}
+              </select>
+            </li>
+            <li class="detachment-detail detachment-detail--detachment_faction">
+              <label for="data.details.detachment_faction">
+                <h4 class="points-label">Faction</h4>
+              </label>
+              <select id="data.details.detachment_faction" class="updatable" name="data.details.detachment_faction.value" data-dtype="data.details.detachment_faction.type">
+                  {{#select data.details.detachment_faction.value}}
+                  <option value=""></option>
+                  <option value="Aeldari - Craftwords">Aeldari - Craftwords</option>
+                  <option value="Aeldari - Drukhari">Aeldari - Drukhari</option>
+                  <option value="Aeldari - FW Corsairs">Aeldari - FW Corsairs</option>
+                  <option value="Aeldari - Harlequins">Aeldari - Harlequins</option>
+
+                  <option value="Chaos - Chaos Knights">Chaos - Chaos Knights</option>
+                  <option value="Chaos - Chaos Space Marines">Chaos - Chaos Space Marines</option>
+                  <option value="Chaos - Daemons">Chaos - Daemons</option>
+                  <option value="Chaos - Death Guard">Chaos - Death Guard</option>
+                  <option value="Chaos - Gallerpox Infected">Chaos - Gallerpox Infected</option>
+                  <option value="Chaos - Renegades & Heretics">Chaos - Renegades & Heretics</option>
+                  <option value="Chaos - Servants of the Abyss">Chaos - Servants of the Abyss</option>
+                  <option value="Chaos - Thousands Sons">Chaos - Thousands Sons</option>
+                  <option value="Chaos - Titanicus Traitoris">Chaos - Titanicus Traitoris</option>
+
+                  <option value="Fallen">Fallen</option>
+
+                  <option value="Imperium - Adepta Sororitas">Imperium - Adepta Sororitas</option>
+                  <option value="Imperium - Adeptus Astra Telephatica">Imperium - Adeptus Astra Telephatica</option>
+                  <option value="Imperium - Adeptus Custodes">Imperium - Adeptus Custodes</option>
+                  <option value="Imperium - Adeptus Mechanicus">Imperium - Adeptus Mechanicus</option>
+                  <option value="Imperium - Adeptus Titanicus">Imperium - Adeptus Titanicus</option>
+                  <option value="Imperium - Astra Militarum">Imperium - Astra Militarum</option>
+                  <option value="Imperium - Blackstone Fortress">Imperium - </option>
+                  <option value="Imperium - Blood Angels">Imperium - Blood Angels</option>
+                  <option value="Imperium - Dark Angels">Imperium - Dark Angels</option>
+                  <option value="Imperium - Death Korps of Krieg">Imperium - Death Korps of Krieg</option>
+                  <option value="Imperium - Deathwatch">Imperium - Deathwatch</option>
+                  <option value="Imperium - Elucidian Starstriders">Imperium - Elucidian Starstriders</option>
+                  <option value="Imperium - Elysian Drop Troops">Imperium - Elysian Drop Troops</option>
+                  <option value="Imperium - Grey Knights">Imperium - Grey Knights</option>
+                  <option value="Imperium - Imperial Knights">Imperium - Imperial Knights</option>
+                  <option value="Imperium - Inquisition">Imperium - Inquisition</option>
+                  <option value="Imperium - Legion of the Damned">Imperium - Legion of the Damned</option>
+                  <option value="Imperium - Oficio Assassinorum">Imperium - Oficio Assassinorum</option>
+                  <option value="Imperium - Sisters of Silence">Imperium - Sisters of Silence</option>
+                  <option value="Imperium - Space Marines">Imperium - Space Marines</option>
+                  <option value="Imperium - Space Wolves">Imperium - Space Wolves</option>
+
+                  <option value="Necrons">Necrons</option>
+
+                  <option value="Orks">Orks</option>
+
+                  <option value="T'au Empire">T'au Empire</option>
+
+                  <option value="Tyranids">Tyranids</option>
+                  <option value="Tyranids - Genestealer Cults">Tyranids - Genestealer Cults</option>
+
+                  <option value="Unaligned - Monsters and Gribblies">Unaligned - Monsters and Gribblies</option>
+                  {{/select}}
+              </select>
+            </li>
+        </ol>
+
+        <ol class="sidebar-item">
+            <li class="points" data-detail="total_points">
+              <div class="sidebar-divider-1">
+                <h4 class="points-label">Detachment Points</h4>
+              </div>
+              <div class="sidebar-divider-2">
+                <input readonly="" name="data.details.total_points" class="points-value" type="text" title="Points" value="{{data.details.total_points}}" data-dtype="Number"/>
+              </div>
+            </li>
+            <li class="points" data-detail="total_power_level">
+              <div class="sidebar-divider-1">
+                <h4 class="power-level-label">Detachment Power Level</h4>
+              </div>
+              <div class="sidebar-divider-2">
+                <input  name="data.details.total_power_level" class="power-level-value" type="text" title="Power Level" value="{{data.details.total_power_level}}" data-dtype="Number"/>
+              </div>
+            </li>
+            <li class="points" data-detail="total_points">
+              <div class="sidebar-divider-1">
+                <h4 class="power-level-label">Max. Number of Units</h4>
+              </div>
+              <div class="sidebar-divider-3">
+                <input  name="data.details.number_units.value" class="number-units-value" type="text" title="Current Numbe of Units" value="{{data.details.number_units.value}}" data-dtype="Number"/> 
+                / 
+                <input  name="data.details.number_units.max" class="number-units-max" type="text" title="Maximum Numbe of Units" value="{{data.details.number_units.max}}" data-dtype="Number"/>
+              </div>
+            </li>
+        </ol>
+    </section>
+
+    <!-- SIDEBAR -->
+</form>

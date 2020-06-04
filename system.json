@@ -1,15 +1,16 @@
 {
   "name": "w40k",
-  "title": "Warhammer 40,000 8th Edition",
-  "description": "Play Warhammer 40,000 8th Edition",
-  "version": "0.0.2.1",
-  "author": "Victor Lundgren",
+  "title": "w40k",
+  "description": "Build campaigns in the 13th Age RPG using the Foundry VTT environment.",
+  "version": "0.0.1",
+  "author": "Matt Smith",
   "minimumCoreVersion": "0.5.2",
   "compatibleCoreVersion": "0.6.1",
   "esmodules": ["module/archmage.js"],
   "scripts": [
     "scripts/lib/parse-md.js",
-    "scripts/migrate/archmage-updates.js"
+    "scripts/migrate/archmage-updates.js",
+    "scripts/sheets.js"
   ],
   "styles": ["css/archmage.css"],
   "packs": [
@@ -23,11 +24,11 @@
     }
   ],
   "languages": ["en"],
-  "url": "https://github.com/victoic/FoundryVTT-W40K/tree/sanity",
-  "manifest": "https://raw.githubusercontent.com/victoic/FoundryVTT-W40K/sanity/system.json",
-  "download": "https://github.com/victoic/FoundryVTT-W40K/archive/sanity.zip",
-  "initiative": "1d6",
+  "url": "https://gitlab.com/asacolips-projects/foundry-mods/archmage",
+  "manifest": "https://gitlab.com/asacolips-projects/foundry-mods/archmage/raw/master/system.json",
+  "download": "https://gitlab.com/asacolips-projects/foundry-mods/archmage/-/archive/1.4.9/archmage-master.zip",
+  "initiative": "1d20 + @abilities.dex.mod + @attributes.init.value + @attributes.level.value + (@abilities.dex.value / 100)",
   "gridDistance": 1,
-  "gridUnits": "in",
-  "primaryTokenAttribute": "attributes.m"
+  "gridUnits": "",
+  "primaryTokenAttribute": "attributes.hp"
 }

@@ -11,7 +11,7 @@ export class ItemArchmageSheet extends ItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: super.defaultOptions.classes.concat(['archmage', 'item', 'item-sheet']),
-      template: 'systems/archmage/templates/item-power-sheet.html',
+      template: 'systems/w40k/templates/item-power-sheet.html',
       height: 400,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-tabs-content", initial: "details" }]
     });
@@ -34,7 +34,7 @@ export class ItemArchmageSheet extends ItemSheet {
       type = 'nastier-special';
     }
     // Get template.
-    return `systems/archmage/templates/items/item-${type}-sheet.html`;
+    return `systems/w40k/templates/items/item-${type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -113,7 +113,7 @@ export class ItemArchmageSheet extends ItemSheet {
           height: 640
         };
 
-        let template = 'systems/archmage/templates/prepopulate/powers--list.html';
+        let template = 'systems/w40k/templates/prepopulate/powers--list.html';
         renderTemplate(template, {
           powers: res.powers,
           class: powerClass

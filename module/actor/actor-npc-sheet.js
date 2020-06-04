@@ -12,7 +12,7 @@ export class ActorArchmageNPCSheet extends ActorArchmageSheet {
   }
 
   get template() {
-    const path = 'systems/archmage/templates/actors/';
+    const path = 'systems/w40k/templates/actors/';
     if (!game.user.isGM && this.actor.limited) return path + "limited-npc-sheet.html";
     return path + "actor-npc-sheet.html";
   }

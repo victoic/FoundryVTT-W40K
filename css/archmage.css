@@ -3,6 +3,79 @@
   font-family: 'Nodesto';
   src: url("../assets/fonts/NodestoCapsCondensed.otf"); }
 
+/*
+*  W40K Classe
+*
+*/
+
+.units-list-wrapper, .units, .sidebar-item {
+  list-style-type: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.units-list-wrapper li.btn-wrapper {
+  width: 50%;
+  margin: auto;
+}
+
+.btn {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.units {
+  text-align: center;
+}
+
+.units li {
+  float: left;
+  margin: auto;
+  width: 25%;
+}
+
+.units li span {
+  margin: auto;
+  width: 100%;
+}
+
+input.unit-size-value {
+  width: 20%;
+}
+
+form [type="text"] {
+  background: none;
+  border: 1px solid transparent;
+  color: #444;
+  height: calc(100% - 2px);
+  padding: 0;
+}
+
+ol.sidebar-item {
+  padding-top: 5;
+  padding-bottom: 5;
+}
+
+div.sidebar-divider-1 {
+  width: 70%;
+  float: left;
+}
+
+div.sidebar-divider-2, div.sidebar-divider-3 {
+  width: 30%;
+  float: right;
+}
+
+div.sidebar-divider-3 input  {
+  width: 40%;
+}
+
+div.sidebar-divider-2 * {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.03)
+}
+
+/* END OF W40K Classes*/
+
 .archmage-preload {
   background: url("../assets/src/ricepaper2_@2X.png") -9999px -9999px;
   pointer-events: none; }
@@ -316,13 +389,7 @@ input[type="checkbox"] {
       -webkit-box-flex: 1;
       -ms-flex: 1;
       flex: 1; }
-    .archmage.sheet form [type='text'] {
-      background: none;
-      border: 1px solid transparent;
-      color: #444;
-      height: calc(100% - 2px);
-      padding: 0;
-      width: calc(100% - 2px); }
+    .archmage.sheet form [type='text'] {}
       .archmage.sheet form [type='text']:hover, .archmage.sheet form [type='text']:focus {
         border: 1px solid #111;
         -webkit-box-shadow: 0 0 8px #ff0000;
@@ -404,9 +471,9 @@ input[type="checkbox"] {
       -ms-flex-order: 2;
       order: 2; }
       .archmage.sheet form .sheet-sidebar > * {
-        -webkit-box-flex: 1;
-        -ms-flex: 1;
-        flex: 1; }
+        -webkit-box-flex: 0.2;
+        -ms-flex: 0.2;
+        flex: 0.2; }
       .archmage.sheet form .sheet-sidebar .sheet-profile {
         border: 0;
         border-bottom: 1px solid #ccc;
