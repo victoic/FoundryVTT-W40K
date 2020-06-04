@@ -90,7 +90,6 @@
 },
 "Item": {
   "types": ["weapon", "wargear"],
-  },
   "weapon": {
     "name": "Manreaper",
     "range": "Melee",

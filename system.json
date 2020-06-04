@@ -1,41 +1,33 @@
 {
-  "name": "FoundryVTT-W40K",
-  "title": "Warhammer 40K 8th Edition",
-  "description": "Basic Warhammer 40K rules system for 8th edition.",
-  "version": "0.0.1",
+  "name": "w40k",
+  "title": "Warhammer 40,000 8th Edition",
+  "description": "Play Warhammer 40,000 8th Edition",
+  "version": "0.0.2.1",
   "author": "Victor Lundgren",
+  "minimumCoreVersion": "0.5.2",
+  "compatibleCoreVersion": "0.6.1",
+  "esmodules": ["module/archmage.js"],
   "scripts": [
-    "./scripts/w40k.js",
+    "scripts/lib/parse-md.js",
+    "scripts/migrate/archmage-updates.js"
   ],
-  "esmodules": [],
-  "styles": [
-    "./styles/w40k.css",
-  ],
+  "styles": ["css/archmage.css"],
   "packs": [
     {
-      "name": "models",
-      "label": "Models",
-      "system": "FoundryVTT-W40K",
-      "module": "FoundryVTT-W40K",
-      "path": "./packs/models.db",
-      "entity": "Actor"
+      "label": "Monk",
+      "entity": "Item",
+      "name": "monk",
+      "path": "packs/monk.db",
+      "system": "archmage",
+      "absPath": "./packs/monk.db"
     }
   ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "./lang/en.json"
-    }
-  ],
-  "socket": false,
-  "gridDistance": 10,
+  "languages": ["en"],
+  "url": "https://github.com/victoic/FoundryVTT-W40K/tree/sanity",
+  "manifest": "https://raw.githubusercontent.com/victoic/FoundryVTT-W40K/sanity/system.json",
+  "download": "https://github.com/victoic/FoundryVTT-W40K/archive/sanity.zip",
+  "initiative": "1d6",
+  "gridDistance": 1,
   "gridUnits": "in",
-  "primaryTokenAttribute": "attributes.w",
-  "secondaryTokenAttribute": null,
-  "minimumCoreVersion": "0.5.3",
-  "compatibleCoreVersion": "0.5.3",
-  "url": "https://github.com/victoic/FoundryVTT-W40K",
-  "manifest": "https://raw.githubusercontent.com/victoic/FoundryVTT-W40K/dev/system.json",
-  "download": "https://github.com/victoic/FoundryVTT-W40K/raw/dev/FoundryVTT-W40K.zip"
+  "primaryTokenAttribute": "attributes.m"
 }

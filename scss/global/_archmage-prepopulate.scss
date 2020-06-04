@@ -1,0 +1,85 @@
+// sass-lint:disable no-important
+.archmage-prepopulate {
+  .window-content > .dialog-content {
+    flex: 100%;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .window-content > .dialog-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 10px 0 3px;
+  }
+}
+
+.archmage-import-power {
+  background: $ct-black--01;
+  border: 1px solid $c-gray--light;
+  border-radius: 3px;
+  box-shadow: 0 0 2px $c-white inset;
+  display: block;
+  flex: 0 0 24px !important;
+  height: 32px;
+  line-height: 24px;
+  margin: 4px;
+  position: relative;
+  text-align: center;
+  width: auto;
+}
+
+.item-sheet {
+  .sheet-header {
+    > .archmage-import-power {
+      flex: 0 0 24px !important;
+    }
+  }
+}
+
+.import-powers-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.import-powers-item {
+  align-items: center;
+  color: $c-white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 2px 4px;
+
+  &:hover,
+  &:focus {
+    color: $c-white;
+  }
+
+  > div {
+    flex: 1;
+  }
+
+  > .title {
+    flex: 1;
+  }
+
+  > .usage {
+    flex: 0 0 120px;
+  }
+
+  > .type {
+    flex: 0 0 100px;
+  }
+
+  > .level {
+    flex: 0 0 24px;
+  }
+
+  + .import-powers-item {
+    border-top: 1px solid $c-gray--light;
+  }
+}
