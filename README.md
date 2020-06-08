@@ -8,3 +8,4 @@ This is a in-development Warhammer 40K 8th Edition system for Foundry VTT.
 1. Select model weapons inside unit sheet;
 1. Roll weapons inside unit and detachment sheets;
 1. Configure armies for CP management?;
+1. Rename archmage and classes files as w40k
