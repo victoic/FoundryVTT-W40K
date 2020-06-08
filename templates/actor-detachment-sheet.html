@@ -17,11 +17,11 @@
             <i class="fas {{unit.icon}} fa-stack-1x"></i>
           </span>
           <span id="unit-size-{{unit.label}}" class="unit-size">
-            <input readonly="" name="units.{{unit.label}}.size.min" class="unit-size-value updatable" type="text" value="{{unit.size.min}}" data-dtype="Number"/>
+            <input readonly="" name="units.{{unit.label}}.size.min" class="unit-size-value" type="text" value="{{unit.size.min}}" data-dtype="Number"/>
             /
-            <input readonly="" name="units.{{unit.label}}.size.value" class="unit-size-value updatable" type="text" value="{{unit.size.value}}" data-dtype="Number"/>
+            <input readonly="" name="units.{{unit.label}}.size.value" class="unit-size-value" type="text" value="{{unit.size.value}}" data-dtype="Number"/>
             /
-            <input readonly="" name="units.{{unit.label}}.size.max" class="unit-size-value updatable" type="text" value="{{unit.size.max}}" data-dtype="Number"/>
+            <input readonly="" name="units.{{unit.label}}.size.max" class="unit-size-value" type="text" value="{{unit.size.max}}" data-dtype="Number"/>
           </span>
         </li>
         {{/each}}
@@ -132,15 +132,23 @@
                 <h4 class="points-label">Detachment Points</h4>
               </div>
               <div class="sidebar-divider-2">
-                <input readonly="" name="data.details.total_points" class="points-value" type="text" title="Points" value="{{data.details.total_points}}" data-dtype="Number"/>
+                <input readonly="" name="data.details.total_points" class="line-value" type="text" title="Points" value="{{data.details.total_points}}" data-dtype="Number"/>
               </div>
             </li>
-            <li class="points" data-detail="total_power_level">
+            <li class="points" data-detail="total_power">
               <div class="sidebar-divider-1">
-                <h4 class="power-level-label">Detachment Power Level</h4>
+                <h4 class="power-level-label">Detachment Power Ranking</h4>
               </div>
               <div class="sidebar-divider-2">
-                <input  name="data.details.total_power_level" class="power-level-value" type="text" title="Power Level" value="{{data.details.total_power_level}}" data-dtype="Number"/>
+                <input readonly="" name="data.details.total_power" class="line-value" type="text" title="Power Level" value="{{data.details.total_power}}" data-dtype="Number"/>
+              </div>
+            </li>
+            <li class="points" data-detail="command_points">
+              <div class="sidebar-divider-1">
+                <h4 class="power-level-label">Command Points</h4>
+              </div>
+              <div class="sidebar-divider-2">
+                <input readonly="" name="data.details.command_points.value" class="line-value" type="text" title="Current {{data.details.command_points.label}}" value="{{data.details.command_points.value}}" data-dtype="Number"/>
               </div>
             </li>
             <li class="points" data-detail="total_points">
@@ -148,9 +156,9 @@
                 <h4 class="power-level-label">Max. Number of Units</h4>
               </div>
               <div class="sidebar-divider-3">
-                <input  name="data.details.number_units.value" class="number-units-value" type="text" title="Current Numbe of Units" value="{{data.details.number_units.value}}" data-dtype="Number"/> 
+                <input readonly="" name="data.details.number_units.value" class="number-units-value" type="text" title="Current Number of Units" value="{{data.details.number_units.value}}" data-dtype="Number"/> 
                 / 
-                <input  name="data.details.number_units.max" class="number-units-max" type="text" title="Maximum Numbe of Units" value="{{data.details.number_units.max}}" data-dtype="Number"/>
+                <input readonly="" name="data.details.number_units.max" class="number-units-max" type="text" title="Maximum Number of Units" value="{{data.details.number_units.max}}" data-dtype="Number"/>
               </div>
             </li>
         </ol>

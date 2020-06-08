@@ -3,79 +3,6 @@
   font-family: 'Nodesto';
   src: url("../assets/fonts/NodestoCapsCondensed.otf"); }
 
-/*
-*  W40K Classe
-*
-*/
-
-.units-list-wrapper, .units, .sidebar-item {
-  list-style-type: none;
-  border-bottom: 1px solid #ccc;
-}
-
-.units-list-wrapper li.btn-wrapper {
-  width: 50%;
-  margin: auto;
-}
-
-.btn {
-  width: 100%;
-  margin-bottom: 2em;
-}
-
-.units {
-  text-align: center;
-}
-
-.units li {
-  float: left;
-  margin: auto;
-  width: 25%;
-}
-
-.units li span {
-  margin: auto;
-  width: 100%;
-}
-
-input.unit-size-value {
-  width: 20%;
-}
-
-form [type="text"] {
-  background: none;
-  border: 1px solid transparent;
-  color: #444;
-  height: calc(100% - 2px);
-  padding: 0;
-}
-
-ol.sidebar-item {
-  padding-top: 5;
-  padding-bottom: 5;
-}
-
-div.sidebar-divider-1 {
-  width: 70%;
-  float: left;
-}
-
-div.sidebar-divider-2, div.sidebar-divider-3 {
-  width: 30%;
-  float: right;
-}
-
-div.sidebar-divider-3 input  {
-  width: 40%;
-}
-
-div.sidebar-divider-2 * {
-  width: 100%;
-  background: rgba(0, 0, 0, 0.03)
-}
-
-/* END OF W40K Classes*/
-
 .archmage-preload {
   background: url("../assets/src/ricepaper2_@2X.png") -9999px -9999px;
   pointer-events: none; }
@@ -418,7 +345,6 @@ input[type="checkbox"] {
       border: 1px solid transparent;
       -webkit-box-shadow: none;
       box-shadow: none; }
-    .archmage.sheet form span,
     .archmage.sheet form label {
       display: block; }
     .archmage.sheet form .mce-panel span {
@@ -2176,3 +2102,145 @@ input[type="checkbox"] {
 .item-properties tr:nth-child(even),
 .card-prop tr:nth-child(even) {
   background: rgba(0, 0, 0, 0.05); }
+
+
+
+/*
+*  W40K Classe
+*
+*/
+
+.units-list-wrapper, .units, .sidebar-item, .attributes-list {
+  list-style-type: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.attributes-list {
+  padding-left: 0.3em;
+}
+
+.attributes-list .attribute {
+  width: 12%;
+  display: inline-block;
+}
+
+.attribute-name {
+  text-align: center;
+}
+
+div.attribute-name, div.attribute-info {
+ text-align: center;
+}
+
+div.attribute-info span.attribute-score, div.attribute-info span.attribute-mask {
+  display: inline-block;
+  width: 25%;
+}
+
+.attributes-list .attribute-score{
+  text-align: right;
+}
+
+.attributes-list .attribute-mask {
+  text-align: left;
+}
+
+.units-list-wrapper li.btn-wrapper {
+  width: 50%;
+  margin: auto;
+}
+
+.btn {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.units {
+  text-align: center;
+}
+
+.units li {
+  float: left;
+  margin: auto;
+  width: 25%;
+}
+
+.units li span {
+  margin: auto;
+  width: 100%;
+}
+
+input.unit-size-value {
+  width: 20%;
+}
+
+form [type="text"] {
+  background: none;
+  border: 1px solid transparent;
+  color: #444;
+  height: calc(100% - 2px);
+  padding: 0;
+}
+
+ol.sidebar-item {
+  padding-top: 5;
+  padding-bottom: 5;
+}
+
+div.sidebar-divider-1 {
+  width: 70%;
+  float: left;
+}
+
+div.sidebar-divider-2, div.sidebar-divider-3 {
+  width: 30%;
+  float: right;
+}
+
+div.sidebar-divider-3 input  {
+  width: 40%;
+}
+
+div.sidebar-divider-2 * {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.03)
+}
+
+.description {
+  width: 100%;
+  padding: 0 20px;
+  display: inherit;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.unit-type-icon, .edit-button {
+  margin-left: auto;
+  margin-top: auto;
+}
+
+form span.keyword {
+  display: inline;
+}
+
+span.unit-type-icon {
+  display: block !important;
+  margin-left: auto;
+}
+
+.body-section-wrapper {
+  border-bottom: 1px solid #ccc;
+}
+
+.model-list-item {
+  width: 100%;
+}
+
+.model-list-item input.model-list-item-counter {
+  width: 10%;
+}
+
+.model-list-item span.model-list-item-name {
+  width: 80%;
+}
+/* END OF W40K Classes*/

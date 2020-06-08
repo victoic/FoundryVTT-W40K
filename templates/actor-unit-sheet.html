@@ -1,0 +1,202 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    <!-- HEADER -->
+    <header class="sheet-header">
+        <h1 class="charname">
+            <input name="name" type="text" value="{{actor.name}}" placeholder="Character Name" />
+        </h1>
+        <small id="unit-type-icon">
+          <span class="fa-stack fa-2x unit-type-icon" >
+            <i class="fas fa-square fa-stack-2x"></i>
+            <i class="fas {{data.details.type.icon}} fa-stack-1x"></i>
+          </span>
+        </small>
+    </header>
+
+    <section class="sheet-body">
+        <!-- ATTRIBUTES -->
+        <div id="description-section" class="body-section-wrapper">
+          <h4 class="description" style="margin-top: 10px;">Description</h4>
+          <div class="description">
+            <span id="data-text-display">{{data.details.description}}</span>
+            <textarea hidden="" id="data-text-editor" name="data.details.description" data-dtype="String">{{data.details.description}}</textarea>
+            <a onclick="enableEditor()" id="data-edit-button" class="edit-button"><i class="fas fa-edit"></i></a>
+            <a onclick="disableEditor()" hidden="" id="data-send-button" class="edit-button"><i class="fas fa-check"></i></a>
+          </div>
+        </div>
+
+        <div id="models-listing body-section-wrapper">
+          <h4 class="description" style="margin-top: 10px;">Models</h4>
+          <div id="model-add-list">
+            <h5 class="description">ADD MODEL:</h5>
+            <select id="data.details.new_model.model_id" name="data.details.new_model.model_id" data-dtype="String" class="description">
+            {{#select data.details.new_model.model_id}}
+            <option value=""></option>
+            {{#each viableModels as | model |}}
+            <option value="{{model._id}}">{{model.name}}</option>
+            {{/each}}
+            {{/select}}
+            </select>
+          </div>
+          <div id="models-list">
+            <h5 class="description">UNIT'S MODELS</h5>
+            {{#each data.details.models.ids as | idModel id |}}
+            {{#with (lookup ../this.data.details.models.numbers @index) as |modelNumbers|}}
+            <div id="{{idModel}}" class="model-list-item description">
+              <span hidden="">min:</span>
+              <input hidden="" class="model-list-item-counter" type="text" name="data.details.models.numbers.{{id}}.min" data-dtype="Number" value="{{modelNumbers.min}}">
+              <input class="model-list-item-counter" type="text" name="data.details.models.numbers.{{id}}.value" data-dtype="Number" value="{{modelNumbers.value}}">
+              <span>x</span>
+              <span hidden="">max:</span>
+              <input hidden="" class="model-list-item-counter" type="text" name="data.details.models.numbers.{{id}}.max" data-dtype="Number" value="{{modelNumbers.max}}">
+            {{/with}}
+            {{#with (lookup ../this.listModels @index) as |modelData|}}
+              <span class="model-list-item-name">{{modelData.data.name}}</span>   
+              <a onclick="toggleModelNumbersEditor(event)" id="data-edit-button" class="edit-button"><i class="fas fa-cog"></i></a>
+            </div>
+            {{/with}} 
+            {{/each}}
+          </div>
+          <button class="btn draw-unit">
+            Create Unit Tokens
+          </button>
+        </div>
+
+        <div id="abilities-listing">
+          <h4 class="description body-section-wrapper" style="margin-top: 10px;">Abilities</h4>
+          <div id="abilities-list">
+            
+          </div>
+        </div>
+
+        <div id="keywords-listing">
+          <h4 class="description" style="margin-top: 10px;">Keywords</h4>
+          <div class="description body-section-wrapper" id="keywords-list">
+            <h5>FACTION KEYWORDS:</h5> 
+            <span id="keyword--main" class="keyword">{{data.keywords.faction_main}}</span>
+            {{#if data.keywords.faction_optional.has_optional}}
+            , <span id="keyword--optional-name" class="keyword">{{data.keywords.faction_optional.name}}</span>
+            {{#if data.keywords.faction_optional.value}}
+            <span id="keyword--optional-value" class="keyword">({{data.keywords.faction_optional.value}})</span>
+            {{/if}}
+            {{/if}}
+            <h5>KEYWORDS:</h5>
+            {{#each data.keywords.other_keywords as |keyword id|}}
+              <span id="keyword--{{keyword}}" class="keyword">{{keyword}},
+            {{/each}}
+          </div>
+        </div>
+    </section>
+
+    <!-- SIDEBAR -->
+    <section class="sheet-sidebar">
+        <ol class="sidebar-item">
+          <select id="data.details.type" name="data.details.type.label" data-dtype="String">
+              {{#select data.details.type.label}}
+              <option value=""></option>
+              <option value="hq_units">HQ</option>
+              <option value="troops_units">Troops</option>
+              <option value="dedicated_transport_units">Dedicated Transport</option>
+              <option value="elites_units">Elites</option>
+              <option value="fast_attack_units">Fast Attack</option>
+              <option value="fortification_units">Fortification</option>
+              <option value="flyers_units">Flyers</option>
+              <option value="heavy_support_units">Heavy Support</option>
+              <option value="lord_of_war_units">Lord of War</option>
+              {{/select}}
+          </select>
+          <li class="points" data-detail="total_points">
+            <div class="sidebar-divider-1">
+              <h4 class="points-label">Total Unit Points</h4>
+            </div>
+            <div class="sidebar-divider-2">
+              <input readonly="" name="data.details.total_points" class="line-value" type="text" title="Total Points" value="{{data.details.total_points}}" data-dtype="Number"/>
+            </div>
+          </li>
+          <li class="points" data-detail="base_points">
+            <div class="sidebar-divider-1">
+              <h4 class="points-label">Base Unit Points</h4>
+            </div>
+            <div class="sidebar-divider-2">
+              <input name="data.details.base_points" class="line-value" type="text" title="Base Points" value="{{data.details.base_points}}" data-dtype="Number"/>
+            </div>
+          </li>
+          <li class="points" data-detail="total_power_level">
+            <div class="sidebar-divider-1">
+              <h4 class="power-level-label">Unit Power Ranking</h4>
+            </div>
+            <div class="sidebar-divider-2">
+              <input  name="data.details.total_power" class="line-value" type="text" title="Power Level" value="{{data.details.total_power}}" data-dtype="Number"/>
+            </div>
+          </li>
+        </ol>
+        <ol class="sidebar-item">
+          <li class="unit-keywords--faction_main">
+            <label for="data.details.detachment_faction">
+              <h4 class="points-label">Main Faction</h4>
+            </label>
+            <select id="data.keywords.faction_main" name="data.keywords.faction_main" data-dtype="String">
+            {{#select data.keywords.faction_main}}
+              <option value=""></option>
+              <option value="Aeldari - Craftwords">Aeldari - Craftwords</option>
+              <option value="Aeldari - Drukhari">Aeldari - Drukhari</option>
+              <option value="Aeldari - FW Corsairs">Aeldari - FW Corsairs</option>
+              <option value="Aeldari - Harlequins">Aeldari - Harlequins</option>
+
+              <option value="Chaos - Chaos Knights">Chaos - Chaos Knights</option>
+              <option value="Chaos - Chaos Space Marines">Chaos - Chaos Space Marines</option>
+              <option value="Chaos - Daemons">Chaos - Daemons</option>
+              <option value="Chaos - Death Guard">Chaos - Death Guard</option>
+              <option value="Chaos - Gallerpox Infected">Chaos - Gallerpox Infected</option>
+              <option value="Chaos - Renegades & Heretics">Chaos - Renegades & Heretics</option>
+              <option value="Chaos - Servants of the Abyss">Chaos - Servants of the Abyss</option>
+              <option value="Chaos - Thousands Sons">Chaos - Thousands Sons</option>
+              <option value="Chaos - Titanicus Traitoris">Chaos - Titanicus Traitoris</option>
+
+              <option value="Fallen">Fallen</option>
+
+              <option value="Imperium - Adepta Sororitas">Imperium - Adepta Sororitas</option>
+              <option value="Imperium - Adeptus Astra Telephatica">Imperium - Adeptus Astra Telephatica</option>
+              <option value="Imperium - Adeptus Custodes">Imperium - Adeptus Custodes</option>
+              <option value="Imperium - Adeptus Mechanicus">Imperium - Adeptus Mechanicus</option>
+              <option value="Imperium - Adeptus Titanicus">Imperium - Adeptus Titanicus</option>
+              <option value="Imperium - Astra Militarum">Imperium - Astra Militarum</option>
+              <option value="Imperium - Blackstone Fortress">Imperium - </option>
+              <option value="Imperium - Blood Angels">Imperium - Blood Angels</option>
+              <option value="Imperium - Dark Angels">Imperium - Dark Angels</option>
+              <option value="Imperium - Death Korps of Krieg">Imperium - Death Korps of Krieg</option>
+              <option value="Imperium - Deathwatch">Imperium - Deathwatch</option>
+              <option value="Imperium - Elucidian Starstriders">Imperium - Elucidian Starstriders</option>
+              <option value="Imperium - Elysian Drop Troops">Imperium - Elysian Drop Troops</option>
+              <option value="Imperium - Grey Knights">Imperium - Grey Knights</option>
+              <option value="Imperium - Imperial Knights">Imperium - Imperial Knights</option>
+              <option value="Imperium - Inquisition">Imperium - Inquisition</option>
+              <option value="Imperium - Legion of the Damned">Imperium - Legion of the Damned</option>
+              <option value="Imperium - Oficio Assassinorum">Imperium - Oficio Assassinorum</option>
+              <option value="Imperium - Sisters of Silence">Imperium - Sisters of Silence</option>
+              <option value="Imperium - Space Marines">Imperium - Space Marines</option>
+              <option value="Imperium - Space Wolves">Imperium - Space Wolves</option>
+
+              <option value="Necrons">Necrons</option>
+
+              <option value="Orks">Orks</option>
+
+              <option value="T'au Empire">T'au Empire</option>
+
+              <option value="Tyranids">Tyranids</option>
+              <option value="Tyranids - Genestealer Cults">Tyranids - Genestealer Cults</option>
+
+              <option value="Unaligned - Monsters and Gribblies">Unaligned - Monsters and Gribblies</option>
+            {{/select}}
+            </select>  
+          </li> 
+          <li>
+            <label for="data.details.detachment_faction">
+              <h4 class="points-label">Optional Faction</h4>
+            </label>
+            <input type="text" name="data.keywords.faction_optional.name" class="line-value" title="Optional Faction" data-dtype="String" value="{{data.keywords.faction_optional.name}}">
+            <input type="text" name="data.keywords.faction_optional.value" class="line-value" title="Optional Faction Name" data-dtype="String" value="{{data.keywords.faction_optional.value}}">
+          </li>       
+        </ol>
+    </section>
+</form>

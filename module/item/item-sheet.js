@@ -49,6 +49,12 @@ export class ItemArchmageSheet extends ItemSheet {
   getData() {
     const data = super.getData();
 
+    if (this.item.type == 'wargear') {
+
+    } else if (this.item.type == 'ability') {
+      
+    }
+
     // Power-specific data
     if (this.item.type === 'power') {
       data['powerSources'] = CONFIG.ARCHMAGE.powerSources;

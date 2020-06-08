@@ -1,21 +1,20 @@
 {
   "Actor": {
-    "types": ["character", "npc", "detachment"],
+    "types": ["character", "npc", "detachment", "model", "unit"],
     "templates": {
       "points": {
         "details": {
           "total_points": 0,
-          "total_power_level": 0
+          "total_power": 0
         },
       "keywords": {
         "keywords": {
         "faction_main":"",
         "faction_optional":{
           "name":"",
-          "value":""
+          "value":"",
+          "has_optional": false
         },
-        "unit_keyword":"",
-        "name_keyword":"",
         "other_keywords":[]
         }
       }
@@ -359,6 +358,11 @@
             "value": 0,
             "max": 0
           },
+          "command_points":{
+            "type": "Number",
+            "label": "Command Points (CP)",
+            "value":0
+          },
           "units_ids": []
       },
       "units": {
@@ -454,59 +458,87 @@
         }
       }
     },
+    "unit": {
+      "templates": ["points", "keywords"],
+      "details": {
+        "base_points": 0,
+        "type":{
+          "label": "",
+          "name": "",
+          "icon":""
+        },
+        "description":"",
+        "models": {
+          "ids": [""],
+          "numbers": [""]
+        },
+        "new_model": {
+          "model_id":""
+        }
+      }
+    },
     "model": {
       "templates": ["points", "keywords"],
+      "details": {
+        "base_size": 0
+      },
       "profile": {
         "m": {
           "type": "String",
           "label": "Movement (M)",
-          "value": "0"
+          "value": "0",
+          "mask": "''"
         },
         "ws": {
           "type": "String",
           "label": "Weapon Skill (WS)",
-          "value": "0"
+          "value": "0",
+          "mask": "+"
         },
         "bs": {
           "type": "String",
           "label": "Ballistic Skill (BS)",
-          "value": "0"
+          "value": "0",
+          "mask": "+"
         },
         "s": {
           "type": "String",
           "label": "Strength (S)",
-          "value": "0"
+          "value": "0",
+          "mask": ""
         },
         "t": {
           "type": "String",
           "label": "Toughness (T)",
-          "value": "0"
+          "value": "0",
+          "mask": ""
         },
         "w": {
           "type": "Number",
           "label": "Wounds (W)",
           "min": 0,
           "value": 0,          
-          "max": 0
+          "max": 0,
+          "mask": ""
         },
         "a": {
           "type": "String",
-          "label": "Attacks",
-          "value": "0"
+          "label": "Attacks (A)",
+          "value": "0",
+          "mask": ""
         },
         "ld": {
           "type": "String",
           "label": "Leadership (Ld)",
-          "value": "0"
+          "value": "0",
+          "mask": ""
         },
         "sv": {
           "type": "String",
           "label": "Save (Sv)",
-          "value": "0"
-        },
-      },
-      "details": {
-        ""
+          "value": "0",
+          "mask": "+"
+        }
       }
     },
     "character": {
@@ -555,7 +587,7 @@
     }
   },
   "Item": {
-    "types": ["power", "trait", "action", "nastierSpecial", "tool", "loot", "equipment"],
+    "types": ["power", "trait", "action", "nastierSpecial", "tool", "loot", "equipment", "wargear", "ability" ],
     "templates": {
       "standard": {
         "name": {
@@ -566,7 +598,89 @@
           "type": "String",
           "label": "Description"
         }
+      },
+      "points": {
+        "total_points":0
       }
+    },
+    "wargear": {
+      "templates": ["points"],
+      "primary_profile": {
+        "range": {
+          "label": "Range",
+          "type": "String",
+          "value": ""
+        },
+        "type": {
+          "type": {
+            "label": "Type",
+            "type": "String",
+            "value": ""
+          },
+          "attacks": {
+            "label": "Number of Attacks",
+            "type": "String",
+            "value": ""
+          }
+        },
+        "s": {
+          "label": "Strength",
+          "type": "String",
+          "value": ""
+        },
+        "ap": {
+          "label": "Armour Penetration",
+          "type": "Number",
+          "value": 0
+        },
+        "d": {
+          "label": "Damage",
+          "type": "String",
+          "value": ""
+        }
+      },
+      "secondary_profile": {
+        "description": "",
+        "range": {
+          "label": "Range",
+          "type": "String",
+          "value": ""
+        },
+        "type": {
+          "type": {
+            "label": "Type",
+            "type": "String",
+            "value": ""
+          },
+          "attacks": {
+            "label": "Number of Attacks",
+            "type": "String",
+            "value": ""
+          }
+        },
+        "s": {
+          "label": "Strength",
+          "type": "String",
+          "value": ""
+        },
+        "ap": {
+          "label": "Armour Penetration",
+          "type": "Number",
+          "value": 0
+        },
+        "d": {
+          "label": "Damage",
+          "type": "String",
+          "value": ""
+        }
+      },
+      "details": {
+        "wargear_list": ""
+      },
+      "abillities": [""]
+    },
+    "ability": {
+      "description": ""
     },
     "power": {
       "templates": ["standard"],

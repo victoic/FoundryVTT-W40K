@@ -3,6 +3,8 @@ import { ActorArchmage } from './actor/actor.js';
 import { ActorArchmageSheet } from './actor/actor-sheet.js';
 import { ActorArchmageNPCSheet } from './actor/actor-npc-sheet.js';
 import { ActorDetachmentSheet } from './actor/actor-detachment-sheet.js';
+import { ActorUnitSheet } from './actor/actor-unit-sheet.js';
+import { ActorModelSheet } from './actor/actor-model-sheet.js';
 import { ItemArchmage } from './item/item.js';
 import { ItemArchmageSheet } from './item/item-sheet.js';
 import { CinderWeatherEffect } from './setup/weather.js';
@@ -25,6 +27,8 @@ Hooks.once('init', async function() {
     ActorArchmageSheet,
     ActorArchmageNPCSheet,
     ActorDetachmentSheet,
+    ActorUnitSheet,
+    ActorModelSheet,
     DiceArchmage,
     ItemArchmage,
     ItemArchmageSheet
@@ -45,17 +49,27 @@ Hooks.once('init', async function() {
   CONFIG.Item.sheetClass = ItemArchmageSheet;
 
   Actors.unregisterSheet('core', ActorSheet);
-  Actors.registerSheet('archmage', ActorArchmageSheet, {
-    types: ["character"],
-    makeDefault: true
-  });
+  
   Actors.registerSheet('archmage', ActorDetachmentSheet, {
     types: ["detachment"],
-    makeDefault: false
+    makeDefault: true
+  });
+  Actors.registerSheet('archmage', ActorModelSheet, {
+    types: ["model"],
+    makeDefault: true
+  });
+  Actors.registerSheet('archmage', ActorUnitSheet, {
+    types: ["unit"],
+    makeDefault: true
   });
 
+  /*TO REMOVE*/
   Actors.registerSheet("archmage", ActorArchmageNPCSheet, {
     types: ["npc"],
+    makeDefault: true
+  });
+  Actors.registerSheet('archmage', ActorArchmageSheet, {
+    types: ["character"],
     makeDefault: true
   });
 
